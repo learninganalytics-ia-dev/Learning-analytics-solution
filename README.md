@@ -1,36 +1,36 @@
 # Learning Analytics Solution
 
-Construisez votre agent analytics grâce à la formation, ou utilisez les outils disponibles pour explorer vos données.
+Apprenez à construire votre agent analytics ou utilisez les outils disponibles avec vos données et votre domaine.
 
-## Plateforme initiale
+Plateforme : https://lasolution-chi.vercel.app/
 
-- Accueil avec le logo Learning Analytics fourni par le dirigeant.
-- Six modules d'introduction : analytics engineering, semantic layer, context layer, agents, artefacts/dashboarding, ACP et clustering.
-- Exercices et corrigés, filtres du catalogue et progression locale déclarative.
-- Laboratoire CSV : ACP, K-means, graphiques, profils de groupes et exports JSON.
-- Assistant descriptif local : comptage, somme et moyenne ; aucun modèle génératif appelé.
-- Configuration et export d'un profil d'agent ; ce profil ne déploie pas un agent génératif.
+## Version 0.2
 
-## Exécuter
+- Six modules de formation enrichis, exercices, corrigés et projet final.
+- Compte apprenant Supabase, progression, projets personnels et historique d'analyses.
+- Agent local avec statistiques, ACP, clustering et preuves de calcul.
+- Starter autonome téléchargeable et exemples synthétiques énergie/formation.
+- Mode génératif préparé côté serveur, désactivé en attente de modèle, budget et comptes pilotes autorisés.
 
-Node.js 22+ ; aucune dépendance externe.
+## Développer
+
+Node.js 24. Dépendances exactes et package-lock.json versionnés.
 
 ```sh
+npm ci
 npm test
 npm run build
 npm run dev
 ```
 
-Aperçu local : http://127.0.0.1:4173. Sortie de build : dist/.
+Sortie statique : dist/. Route serveur : api/agent.js. Aucun service_role ou secret de modèle dans les sources. Les valeurs de web/config.mjs sont les paramètres publics Supabase, protégés par RLS côté base.
 
-## Déployer depuis GitHub vers Vercel
+## Documentation
 
-Le dépôt est learninganalytics-ia-dev/Learning-analytics-solution. Importer ce dépôt dans l'équipe Vercel Learning Analytics. Framework : Other ; racine : dépôt ; commande : npm run build ; sortie : dist. La configuration vercel.json est versionnée. Aucun secret n'est requis pour cette première version.
+- [Fonctions, protections et limites de la version 0.2](docs/platform-v2.md)
+- [Périmètre produit](docs/product-scope.md)
+- [Formation et outils prêts à utiliser](docs/offer-model.md)
+- [Starter de construction](examples/agent-starter/README.md)
+- [Deux domaines de démonstration](examples/domains/README.md)
 
-Les commits du dépôt peuvent déclencher Vercel une fois l'intégration GitHub reliée au projet. Le simple push GitHub ne crée pas un projet Vercel.
-
-## Limites et suite
-
-Cette version n'inclut ni comptes utilisateurs, ni paiement, ni progression synchronisée, ni agent génératif déployé. Les données CSV sont traitées dans le navigateur ; les profils et la progression restent sur l'appareil. Supabase n'est pas encore utilisé.
-
-Voir [les fonctions et limites de la plateforme](docs/platform-v1.md), [le périmètre](docs/product-scope.md), [l'offre](docs/offer-model.md), [le premier kit](docs/first-kit.md) et [les règles de contribution](CONTRIBUTING.md).
+Le dépôt est connecté au projet Vercel lasolution. Les changements autorisés passent par GitHub. Les configurations non secrètes, tests, migration, compétences de l'équipe et rapports sont versionnés ; les secrets et données utilisateurs ne le sont pas.
