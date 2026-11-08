@@ -1,6 +1,10 @@
 # Learning Analytics Solution
 
-Outils réutilisables, exemples et supports de formation pour construire des systèmes d'agents IA analytics efficaces.
+Quel que soit votre domaine, **construisez votre agent analytics grâce à la formation, ou utilisez un agent déjà construit grâce à nos outils**.
+
+La formation accompagne la réalisation de votre propre agent. L'outil fournit un agent fonctionnel pour les cas d'usage annoncés, configurable avec vos données et votre contexte métier. Les deux offres reposent sur les mêmes briques réutilisables.
+
+Voir [la promesse et les critères de l'offre](docs/offer-model.md).
 
 ## Domaines couverts
 

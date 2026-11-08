@@ -35,3 +35,7 @@ Ces extensions peuvent être utilisées indépendamment de la partie générativ
 ## Décisions ouvertes
 
 Public, domaine, KPI, rôle du LLM, ordre détaillé, technologies, licence et budget. Voir [le périmètre global](product-scope.md).
+
+## Deux livraisons cohérentes
+
+Le kit doit fournir une formation permettant de construire son agent et un agent produit prêt à utiliser sur le cas d'usage annoncé. Les deux reposent sur les mêmes briques. Le domaine de démonstration est un exemple ; les éléments métier sont isolés dans une configuration afin de permettre d'autres adaptations. Le démarrage produit ne doit pas exiger de coder l'agent. Voir [le modèle d'offre](offer-model.md).

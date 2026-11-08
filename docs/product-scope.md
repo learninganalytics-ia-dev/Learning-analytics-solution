@@ -53,3 +53,7 @@ Chaque domaine associe un outil réutilisable, un exemple reproductible, des sup
 4. Des parcours de formation par couche et un projet final qui relie les modules.
 
 Le périmètre global est demandé par le dirigeant. Cet ordre de réalisation est une proposition ; les outils et cours ne sont pas encore implémentés.
+
+## Modèle d'offre transverse
+
+Le socle est adaptable à différents domaines d'application. La formation accompagne la construction de l'agent de l'apprenant ; le produit fournit l'agent prêt à utiliser après configuration de ses données et de son contexte. Chaque module contribue à ce résultat final. Les méthodes ACP et clustering peuvent être des outils de l'agent sans être confondues avec un agent complet. Voir [le modèle d'offre et ses critères](offer-model.md).
