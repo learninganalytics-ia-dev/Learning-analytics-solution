@@ -1,15 +1,22 @@
 # Learning Analytics Solution
 
-Outils réutilisables, exemples et supports de formation pour construire des agents IA analytics efficaces.
+Outils réutilisables, exemples et supports de formation pour construire des systèmes d'agents IA analytics efficaces.
 
-## État initial
+## Domaines couverts
 
-Ce dépôt contient le cadrage et les règles de contribution. Le premier kit est proposé ; aucun agent analytics produit ni cours complet n'est encore livré.
+- Analytics engineering : préparation, transformations et qualité des données.
+- Semantic layer : métriques, dimensions et définitions métier.
+- Context layer : documentation, sources et contexte utile à l'agent.
+- Agents analytics : orchestration des questions, outils, calculs et vérification.
+- Artefacts IA et dashboarding : rapports, graphiques, tableaux de bord et applications interactives.
+- Machine learning appliqué : ACP et clustering, avec diagnostics et interprétation.
 
-## Premier kit proposé
+Voir [le périmètre et les contrats entre couches](docs/product-scope.md).
 
-Un outil d'analyse de CSV, un jeu de données synthétiques, des calculs de référence, une interface de questions et un tutoriel avec exercice et corrigé. Le public, les KPI et les fonctions génératives seront précisés avant réalisation.
+## État actuel
 
-Voir [le brief](docs/first-kit.md) et [les règles de contribution](CONTRIBUTING.md).
+Le cadrage est versionné. Les outils et les cours restent à construire. Chaque module doit associer outil, exemple reproductible, formation, exercice corrigé et évaluation.
 
-Les opérations internes de l'équipe sont gérées séparément dans IA Comex. Aucun prompt interne, compte rendu confidentiel ni donnée client ne doit être copié ici.
+Le [premier kit proposé](docs/first-kit.md) traverse les différentes couches sur des données synthétiques. Les modules ACP et clustering complètent ce parcours et doivent également être utilisables séparément.
+
+Voir [les règles de contribution](CONTRIBUTING.md). Les opérations internes de l'équipe sont gérées dans IA Comex ; aucun document confidentiel ni donnée client ne doit être copié ici.

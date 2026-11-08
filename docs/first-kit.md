@@ -1,23 +1,37 @@
-# KIT-001 — proposition de kit analytics CSV
+# KIT-001 — première chaîne analytics de bout en bout
 
-Statut : proposition à cadrer et à valider avant publication du produit.
+Statut : proposition de réalisation dans le périmètre confirmé par le dirigeant. Public, domaine métier et publication finale restent à valider.
 
 ## Résultat visé
 
-Permettre à un apprenant de construire un agent qui répond à des questions sur un CSV avec des calculs vérifiables et des sources explicites.
+Permettre à un apprenant de relier données préparées, définitions métier, contexte, agent analytics et dashboard sur un même exemple. Le format CSV est un point d'entrée pédagogique ; il ne limite pas le périmètre de Learning Analytics Solution.
 
 ## Livrables proposés
 
-- Outil d'import et de validation d'un CSV.
-- Données synthétiques et dictionnaire des colonnes.
-- Définitions des KPI et calculs de référence.
-- Exemple de questions, réponses attendues et limites.
-- Tutoriel, exercice autonome, corrigé et grille d'évaluation.
+1. Analytics engineering : import CSV, dictionnaire, transformations et tests de qualité.
+2. Semantic layer : métriques et dimensions documentées avec calculs de référence.
+3. Context layer : glossaire, sources, règles métier et limites temporelles.
+4. Agent analytics : cinq questions de référence, outils de calcul et réponses sourcées.
+5. Artefact : dashboard et rapport utilisant les mêmes métriques, filtres et sources.
+6. Formation : tutoriel, exercice autonome, corrigé et grille d'évaluation.
 
-## Critères à préciser lors du cadrage
+## Extensions distinctes
 
-Choisir le public et le domaine, définir cinq questions représentatives et leurs réponses attendues. Vérifier au minimum une entrée valide, un fichier vide, une colonne absente et une valeur invalide. Une réponse générée doit distinguer ses sources et ses hypothèses ; les calculs doivent pouvoir être contrôlés indépendamment.
+- KIT-ACP : exploration par ACP, variance expliquée, contributions et projections.
+- KIT-CLUSTER : segmentation, profils de groupes, diagnostics et stabilité.
+- Projet transversal : comparer une segmentation avec et sans réduction de dimension, en explicitant les limites.
+
+Ces extensions peuvent être utilisées indépendamment de la partie générative.
+
+## Acceptation
+
+- Les cinq questions ont des résultats attendus calculés indépendamment.
+- Les KPI affichés dans le dashboard concordent avec les définitions et les calculs.
+- Chaque réponse indique sources, filtres et limites utiles.
+- Les erreurs de fichier vide, colonne absente et valeur invalide sont traitées.
+- Les étapes peuvent être reproduites à partir des commandes et prérequis documentés.
+- Aucun résultat ACP ou clustering n'est présenté comme une relation causale.
 
 ## Décisions ouvertes
 
-Public initial, domaine métier, KPI, rôle éventuel d'un LLM, conditions de diffusion et budget d'exécution. Aucun de ces choix n'est enregistré comme approuvé.
+Public, domaine, KPI, rôle du LLM, ordre détaillé, technologies, licence et budget. Voir [le périmètre global](product-scope.md).
