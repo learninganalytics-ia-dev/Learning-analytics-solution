@@ -5,3 +5,6 @@ __pycache__/
 .venv/
 private-data/
 tmp/
+node_modules/
+dist/
+.vercel/

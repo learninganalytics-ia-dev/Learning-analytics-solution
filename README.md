@@ -1,26 +1,36 @@
 # Learning Analytics Solution
 
-Quel que soit votre domaine, **construisez votre agent analytics grâce à la formation, ou utilisez un agent déjà construit grâce à nos outils**.
+Construisez votre agent analytics grâce à la formation, ou utilisez les outils disponibles pour explorer vos données.
 
-La formation accompagne la réalisation de votre propre agent. L'outil fournit un agent fonctionnel pour les cas d'usage annoncés, configurable avec vos données et votre contexte métier. Les deux offres reposent sur les mêmes briques réutilisables.
+## Plateforme initiale
 
-Voir [la promesse et les critères de l'offre](docs/offer-model.md).
+- Accueil avec le logo Learning Analytics fourni par le dirigeant.
+- Six modules d'introduction : analytics engineering, semantic layer, context layer, agents, artefacts/dashboarding, ACP et clustering.
+- Exercices et corrigés, filtres du catalogue et progression locale déclarative.
+- Laboratoire CSV : ACP, K-means, graphiques, profils de groupes et exports JSON.
+- Assistant descriptif local : comptage, somme et moyenne ; aucun modèle génératif appelé.
+- Configuration et export d'un profil d'agent ; ce profil ne déploie pas un agent génératif.
 
-## Domaines couverts
+## Exécuter
 
-- Analytics engineering : préparation, transformations et qualité des données.
-- Semantic layer : métriques, dimensions et définitions métier.
-- Context layer : documentation, sources et contexte utile à l'agent.
-- Agents analytics : orchestration des questions, outils, calculs et vérification.
-- Artefacts IA et dashboarding : rapports, graphiques, tableaux de bord et applications interactives.
-- Machine learning appliqué : ACP et clustering, avec diagnostics et interprétation.
+Node.js 22+ ; aucune dépendance externe.
 
-Voir [le périmètre et les contrats entre couches](docs/product-scope.md).
+```sh
+npm test
+npm run build
+npm run dev
+```
 
-## État actuel
+Aperçu local : http://127.0.0.1:4173. Sortie de build : dist/.
 
-Le cadrage est versionné. Les outils et les cours restent à construire. Chaque module doit associer outil, exemple reproductible, formation, exercice corrigé et évaluation.
+## Déployer depuis GitHub vers Vercel
 
-Le [premier kit proposé](docs/first-kit.md) traverse les différentes couches sur des données synthétiques. Les modules ACP et clustering complètent ce parcours et doivent également être utilisables séparément.
+Le dépôt est learninganalytics-ia-dev/Learning-analytics-solution. Importer ce dépôt dans l'équipe Vercel Learning Analytics. Framework : Other ; racine : dépôt ; commande : npm run build ; sortie : dist. La configuration vercel.json est versionnée. Aucun secret n'est requis pour cette première version.
 
-Voir [les règles de contribution](CONTRIBUTING.md). Les opérations internes de l'équipe sont gérées dans IA Comex ; aucun document confidentiel ni donnée client ne doit être copié ici.
+Les commits du dépôt peuvent déclencher Vercel une fois l'intégration GitHub reliée au projet. Le simple push GitHub ne crée pas un projet Vercel.
+
+## Limites et suite
+
+Cette version n'inclut ni comptes utilisateurs, ni paiement, ni progression synchronisée, ni agent génératif déployé. Les données CSV sont traitées dans le navigateur ; les profils et la progression restent sur l'appareil. Supabase n'est pas encore utilisé.
+
+Voir [les fonctions et limites de la plateforme](docs/platform-v1.md), [le périmètre](docs/product-scope.md), [l'offre](docs/offer-model.md), [le premier kit](docs/first-kit.md) et [les règles de contribution](CONTRIBUTING.md).
