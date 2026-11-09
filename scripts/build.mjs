@@ -4,6 +4,8 @@ await mkdir('dist/downloads',{recursive:true});
 await cp('web','dist',{recursive:true});
 await cp('assets','dist/assets',{recursive:true});
 await cp('examples/domains','dist/downloads/domains',{recursive:true});
+await cp('examples/driver-tree/exemple.json','dist/downloads/driver-tree-exemple.json');
+await cp('docs/driver-tree.md','dist/downloads/driver-tree-guide.md');
 await build({entryPoints:['web/app.mjs'],outfile:'dist/app.mjs',bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,define:{'process.env.NODE_ENV':'"production"'}});
 await build({entryPoints:['examples/agent-starter/agent.mjs'],outfile:'dist/downloads/agent-local.mjs',bundle:true,format:'esm',platform:'node',target:'node22'});
 for(const file of ['index.html','app.mjs','analytics.mjs','courses.mjs','styles.css'])await readFile('dist/'+file);

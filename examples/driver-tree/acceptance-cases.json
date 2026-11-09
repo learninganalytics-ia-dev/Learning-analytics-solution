@@ -1,0 +1,372 @@
+{
+  "version": "0.1.0",
+  "synthetic": true,
+  "scope": "arbre global du CA uniquement",
+  "period_cases": [
+    {
+      "id": "nominal_reference",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": 30000
+      },
+      "expected": {
+        "status": "complete",
+        "ca": "30000",
+        "pvm": "15",
+        "panier_moyen": "30",
+        "taux_demarque": "1/16",
+        "ca_reconstruit": "30000"
+      }
+    },
+    {
+      "id": "nominal_comparison",
+      "input": {
+        "trafic": 10000,
+        "commandes": 900,
+        "unites": 1800,
+        "ca_brut": 28800,
+        "ca_net": 25200
+      },
+      "expected": {
+        "status": "complete",
+        "ca": "25200",
+        "pvm": "14",
+        "tt": "9/100",
+        "taux_demarque": "1/8",
+        "ca_reconstruit": "25200"
+      }
+    },
+    {
+      "id": "full_markdown",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": 0
+      },
+      "expected": {
+        "status": "complete",
+        "ca": "0",
+        "pvm": "0",
+        "panier_moyen": "0",
+        "taux_demarque": "1",
+        "ca_reconstruit": "0"
+      }
+    },
+    {
+      "id": "no_commands",
+      "input": {
+        "trafic": 10000,
+        "commandes": 0,
+        "unites": 0,
+        "ca_brut": 0,
+        "ca_net": 0
+      },
+      "expected": {
+        "status": "partial",
+        "ca": "0",
+        "tt": "0",
+        "iv": null,
+        "panier_moyen": null,
+        "pvm": null,
+        "prix_brut": null,
+        "taux_demarque": null,
+        "ca_reconstruit": null
+      }
+    },
+    {
+      "id": "zero_gross",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 0,
+        "ca_net": 0
+      },
+      "expected": {
+        "status": "partial",
+        "ca": "0",
+        "pvm": "0",
+        "prix_brut": "0",
+        "taux_demarque": null,
+        "ca_reconstruit": null
+      }
+    },
+    {
+      "id": "missing_traffic",
+      "input": {
+        "trafic": null,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": 30000
+      },
+      "expected": {
+        "status": "partial",
+        "ca": "30000",
+        "tt": null,
+        "pvm": "15",
+        "ca_reconstruit": null
+      }
+    },
+    {
+      "id": "net_above_gross",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": 33000
+      },
+      "expected": {
+        "error": "net_above_gross",
+        "status": "rejected"
+      }
+    },
+    {
+      "id": "negative",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": -1
+      },
+      "expected": {
+        "error": "invalid_ca_net",
+        "status": "rejected"
+      }
+    },
+    {
+      "id": "non_finite",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": "NaN",
+        "ca_net": 30000
+      },
+      "expected": {
+        "error": "invalid_ca_brut",
+        "status": "rejected"
+      }
+    },
+    {
+      "id": "boolean_count",
+      "input": {
+        "trafic": 10000,
+        "commandes": true,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": 30000
+      },
+      "expected": {
+        "error": "invalid_commandes",
+        "status": "rejected"
+      }
+    },
+    {
+      "id": "amount_without_units",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 0,
+        "ca_brut": 32000,
+        "ca_net": 30000
+      },
+      "expected": {
+        "error": "amount_without_units",
+        "status": "rejected"
+      }
+    },
+    {
+      "id": "units_without_commands",
+      "input": {
+        "trafic": 10000,
+        "commandes": 0,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": 30000
+      },
+      "expected": {
+        "error": "units_without_commands",
+        "status": "rejected"
+      }
+    },
+    {
+      "id": "zero_traffic",
+      "input": {
+        "trafic": 0,
+        "commandes": 0,
+        "unites": 0,
+        "ca_brut": 0,
+        "ca_net": 0
+      },
+      "expected": {
+        "status": "partial",
+        "ca": "0",
+        "tt": null,
+        "iv": null,
+        "pvm": null,
+        "ca_reconstruit": null
+      }
+    },
+    {
+      "id": "missing_ca_field",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000
+      },
+      "expected": {
+        "status": "partial",
+        "ca": null,
+        "pvm": null,
+        "panier_moyen": null,
+        "taux_demarque": null,
+        "ca_reconstruit": null
+      }
+    },
+    {
+      "id": "null_ca",
+      "input": {
+        "trafic": 10000,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": null
+      },
+      "expected": {
+        "status": "partial",
+        "ca": null,
+        "ca_reconstruit": null
+      }
+    },
+    {
+      "id": "absent_traffic_field",
+      "input": {
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": 30000
+      },
+      "expected": {
+        "status": "partial",
+        "ca": "30000",
+        "tt": null,
+        "ca_reconstruit": null
+      }
+    },
+    {
+      "id": "positive_commands_without_traffic",
+      "input": {
+        "trafic": 0,
+        "commandes": 1000,
+        "unites": 2000,
+        "ca_brut": 32000,
+        "ca_net": 30000
+      },
+      "expected": {
+        "error": "commands_without_traffic",
+        "status": "rejected"
+      }
+    },
+    {
+      "id": "amount_without_commands_unknown_units",
+      "input": {
+        "trafic": 10000,
+        "commandes": 0,
+        "unites": null,
+        "ca_brut": 32000,
+        "ca_net": 30000
+      },
+      "expected": {
+        "error": "amount_without_commands",
+        "status": "rejected"
+      }
+    }
+  ],
+  "comparison_cases": [
+    {
+      "id": "same_contract",
+      "reference": {
+        "currency": "EUR",
+        "days": 28,
+        "scope": "same",
+        "tax": "HT",
+        "traffic_definition": "sessions",
+        "returns": "excluded"
+      },
+      "comparison": {
+        "currency": "EUR",
+        "days": 28,
+        "scope": "same",
+        "tax": "HT",
+        "traffic_definition": "sessions",
+        "returns": "excluded"
+      },
+      "expected": "comparable_declared"
+    },
+    {
+      "id": "mixed_currency",
+      "reference": {
+        "currency": "EUR",
+        "days": 28
+      },
+      "comparison": {
+        "currency": "USD",
+        "days": 28
+      },
+      "expected": "refused"
+    },
+    {
+      "id": "unequal_duration",
+      "reference": {
+        "currency": "EUR",
+        "days": 28
+      },
+      "comparison": {
+        "currency": "EUR",
+        "days": 30
+      },
+      "expected": "refused"
+    },
+    {
+      "id": "incomplete_metadata",
+      "reference": {
+        "currency": "EUR",
+        "days": 28
+      },
+      "comparison": {
+        "currency": "EUR",
+        "days": 28
+      },
+      "expected": "insufficient_context"
+    },
+    {
+      "id": "empty_context",
+      "reference": {
+        "currency": "EUR",
+        "days": 28,
+        "scope": "",
+        "tax": "HT",
+        "traffic_definition": "sessions",
+        "returns": "excluded"
+      },
+      "comparison": {
+        "currency": "EUR",
+        "days": 28,
+        "scope": "",
+        "tax": "HT",
+        "traffic_definition": "sessions",
+        "returns": "excluded"
+      },
+      "expected": "insufficient_context"
+    }
+  ]
+}

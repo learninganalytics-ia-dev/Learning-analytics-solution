@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "question": "Comment le CA a-t-il évolué et quels facteurs faut-il investiguer ?",
+  "reference": {
+    "context": {
+      "currency": "EUR",
+      "days": 7,
+      "scope": "commerce-demo",
+      "tax": "HT",
+      "traffic_definition": "sessions",
+      "returns": "excluded",
+      "source": "Exemple pédagogique Learning Analytics · données synthétiques"
+    },
+    "data": {
+      "trafic": 10000,
+      "commandes": 1000,
+      "unites": 2000,
+      "ca_brut": 32000,
+      "ca_net": 30000
+    }
+  },
+  "comparison": {
+    "context": {
+      "currency": "EUR",
+      "days": 7,
+      "scope": "commerce-demo",
+      "tax": "HT",
+      "traffic_definition": "sessions",
+      "returns": "excluded",
+      "source": "Exemple pédagogique Learning Analytics · données synthétiques"
+    },
+    "data": {
+      "trafic": 10000,
+      "commandes": 900,
+      "unites": 1800,
+      "ca_brut": 28800,
+      "ca_net": 25200
+    }
+  }
+}
